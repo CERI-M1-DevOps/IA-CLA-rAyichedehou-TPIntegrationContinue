@@ -1,0 +1,17 @@
+name : Bonjour
+
+on : [push] # Pour signifier que ce worflow se declenche sur un push
+
+jobs :
+  Salutations : # Nom du job : Salutations
+    name : Salutations
+    runs-on : ubuntu-latest # OS d'exécution
+    steps:
+      - name : Hello #une tâhe pour saluer
+        env :
+          personneASaluer : 'Mon voisin Totoro'
+        run : echo "Bonjour ${personneASaluer} "
+      - name : L'heure de la salutation #une tâche pour saluer
+        run : echo "L'heure était $(date). "
+      
+      
