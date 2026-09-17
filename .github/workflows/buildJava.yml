@@ -16,7 +16,7 @@ jobs:
         java-version : '21'
         distribution : 'corretto'
     - name : Verifier la qualité de code
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar-Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-')
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-')
       env :
         SONAR_TOKEN : ${{secrets.SONAR_TOKEN}}
 
