@@ -49,7 +49,7 @@ import static org.junit.jupiter.api.Assertions.*;
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.ajout(3);
-        assertEquals(1, listeATester.getSize());
+        assertEquals(3, listeATester.getSize());
         System.out.println(listeATester);
     }
 
