@@ -120,9 +120,8 @@ public class ListeSimple {
     public void echanger(Noeud r1, Noeud r2) {
         if (r1 == r2)
             return;
-        Noeud precedentR1;
-        Noeud precedentR2;
-        if (r1 != tete) {
+        Noeud precedentR1, precedentR2;
+        if (r1 != tete && r2 != tete) {
             precedentR1 = getPrecedent(r1);
             precedentR2 = getPrecedent(r2);
             precedentR1.setSuivant(r2);
@@ -132,7 +131,7 @@ public class ListeSimple {
             precedentR2.setSuivant(tete);
             tete = r2;
         }
-        else {
+        else if (r2 == tete) {
             precedentR1 = getPrecedent(r1);
             precedentR1.setSuivant(tete);
             tete = r1;
